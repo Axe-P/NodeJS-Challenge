@@ -1,6 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// This function is responsible for getting the badge(s) .img.
 function renderLicenseBadge(license) {
+    // Using a switch case function based off of user input.
   switch (license) {
       case 'MIT':
           return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
@@ -15,6 +17,7 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+// This function is basically doing the same thing as the last, except grabbing the source to the license.
 function renderLicenseLink(license) {
   switch (license) {
       case 'MIT':
@@ -30,14 +33,17 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
+// This function checks to see if license was left blank, OR === the 'N/a' response.
 function renderLicenseSection(license) {
   if (!license || license === 'N/a') {
       return '';
   }
 
+// Based off the input then we are declaring two variables that are taking the input through the two previously declared functions.
   const badge = renderLicenseBadge(license);
   const link = renderLicenseLink(license);
 
+// Then this will return more "markdown" data to be used in the generateMardown() function. 
   return `
 ## License
 This project licensed by ${license}.
