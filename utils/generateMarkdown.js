@@ -79,7 +79,6 @@ ${data.usage}
 ## Contributions
 ${data.contributions}
 
-## License
 ${renderLicenseSection(data.license)}
 
 ## Questions
